@@ -1,0 +1,53 @@
+#
+# ***************
+# Open boundaries
+# ***************
+ &OBCS_PARM01
+ OB_Jnorth=   774*966,
+ OB_Jsouth=   774*1,
+ OB_Iwest=    966*1,
+#
+ useOrlanskiNorth=.FALSE.,
+ useOBCSsponge=.TRUE.,
+ useLinearSponge=.TRUE.,
+ OBCSsponge_Salt=.FALSE.,
+ OBCSsponge_Theta=.FALSE.,
+ useOBCSbalance=.FALSE.,
+ useOBCSprescribe=.TRUE.,
+#
+ OBNuFile='../linked_files/U_obcn_zeros_ccs_may2016.bin',
+ OBNvFile='../linked_files/v_obcn_glorysNRT_ccs_may2023.bin',
+ OBNtFile='../linked_files/t_obcn_glorysNRT_ccs_may2023.bin',
+ OBNsFile='../linked_files/s_obcn_glorysNRT_ccs_may2023.bin',
+#
+ OBSuFile='../linked_files/U_obcs_zeros_ccs_may2016.bin',
+ OBSvFile='../linked_files/v_obcs_glorysNRT_ccs_may2023.bin',
+ OBStFile='../linked_files/t_obcs_glorysNRT_ccs_may2023.bin',
+ OBSsFile='../linked_files/s_obcs_glorysNRT_ccs_may2023.bin',
+#
+ OBWuFile='../linked_files/u_obcw_zeronet_glorysNRT_ccs_may2023.bin',
+ OBWvFile='../linked_files/V_obcw_zeros_ccs_may2016.bin',
+ OBWtFile='../linked_files/t_obcw_glorysNRT_ccs_may2023.bin',
+ OBWsFile='../linked_files/s_obcw_glorysNRT_ccs_may2023.bin',
+#
+#  MITgcm/verification/seaice_obcs/input.tides
+   useOBCStides = .FALSE.,
+#
+ /
+# *****************************************
+# Orlanski Boundary Condition Parameters.
+# *****************************************
+ &OBCS_PARM02
+# cvelTimeScale = 2000.,
+ /
+
+# *****************************************
+# Sponge Layer Parameters.
+# *****************************************
+ &OBCS_PARM03
+ Urelaxobcsinner=864000.E0,
+ Urelaxobcsbound=43200.E0,
+ Vrelaxobcsinner=864000.E0,
+ Vrelaxobcsbound=43200.E0,
+ spongeThickness=10,
+ /
